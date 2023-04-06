@@ -1,0 +1,14 @@
+.sticky-header {
+  background-color: #228be6!important;
+}
+
+.react-fluid-table-header {
+  min-height: 58px;
+  background-color: #228be6!important;
+  align-items: center!important;
+  color: white;
+}
+
+.header-cell-text {
+  color: white!important;
+}
