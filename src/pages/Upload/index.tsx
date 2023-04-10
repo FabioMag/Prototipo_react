@@ -64,13 +64,6 @@ const Admin: React.FC = () => {
             average: 0,
         }
 
-        const dataGroup = graph.group || []
-
-        dataGroup?.forEach((e: any) => {
-            returnData.total = parseInt(returnData.total + e.totalValue)
-            returnData.average = parseInt(returnData.average + e.averageValue)
-        })
-
         return returnData
     }, [graph])
 
