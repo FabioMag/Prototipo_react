@@ -30,10 +30,22 @@ const Header: React.FC = () => {
           <FiFileText className="mr-1" />
           Relatório
         </Link>
-        <Link to="/upload" className="font-medium text-sm text-blue-500 cursor-pointer flex items-center" style={{ textDecoration: 'none' }}>
-          <FiUpload className="mr-1" />
-          Upload
-        </Link>
+        <DropdownMenu.Root>
+          <DropdownMenu.Trigger asChild>
+            <div className="font-medium text-sm text-blue-500 cursor-pointer flex items-center gap-4">
+              <FiUpload className="mr-1" />
+              Upload
+            </div>
+          </DropdownMenu.Trigger>
+          <DropdownMenu.Content className="bg-white p-4 shadow-md space-y-4 rounded-md min-w-[100px]">
+            <Link to="/Cadlayout" className="font-medium text-sm text-blue-500 cursor-pointer flex items-center" style={{ textDecoration: 'none' }}>
+              Cadastrar Layout
+            </Link>
+            <Link to="/Upload" className="font-medium text-sm text-blue-500 cursor-pointer flex items-center" style={{ textDecoration: 'none' }}>
+              Carregar arquivo
+            </Link>
+          </DropdownMenu.Content>
+        </DropdownMenu.Root>
 
         <DropdownMenu.Root>
           <DropdownMenu.Trigger asChild>

@@ -70,21 +70,21 @@ const Filters: React.FC<FiltersProps> = ({
         <div className="col-span-4">
           <Input
             onInputBlur={() => form.setValues(INITIAL_FILTER)}
-            placeholder="Número do processo"
+            placeholder="Fundo"
             {...form.getInputProps('number')}
           />
         </div>
         <div className="col-span-4">
           <Input
             onInputBlur={() => form.setValues(INITIAL_FILTER)}
-            placeholder="Produto"
+            placeholder="Liquidez"
             {...form.getInputProps('text')}
           />
         </div>
         <div className="col-span-4">
           <Input
             onInputBlur={() => form.setValues(INITIAL_FILTER)}
-            placeholder="Nome Pessoa"
+            placeholder="Risco"
             {...form.getInputProps('number')}
           />
         </div>
@@ -93,14 +93,15 @@ const Filters: React.FC<FiltersProps> = ({
         <div className="col-span-3">
           <Input
             onInputBlur={() => form.setValues(INITIAL_FILTER)}
-            placeholder="Nome Parceiro"
+            placeholder="Rendimento Anual"
             {...form.getInputProps('number')}
           />
         </div>
         <div className="col-span-3">
-          <InputMask
-            placeholder="Buscar por valor"
-            {...form.getInputProps('valueStop')}
+          <Input
+            onInputBlur={() => form.setValues(INITIAL_FILTER)}
+            placeholder="Rendimento Mensal"
+            {...form.getInputProps('number')}
           />
         </div>
 

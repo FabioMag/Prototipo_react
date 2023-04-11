@@ -19,16 +19,23 @@ const data = [
     {
         'Data Importação': '2022-03-01',
         'Nome do Arquivo': 'arquivo1.csv',
+        'Tipo de Arquivo': 'CSV',
+        'Delimitador': ';'
     },
     {
         'Data Importação': '2022-03-02',
         'Nome do Arquivo': 'arquivo2.csv',
+        'Tipo de Arquivo': 'CSV',
+        'Delimitador': ','
     },
     {
         'Data Importação': '2022-03-03',
         'Nome do Arquivo': 'arquivo3.csv',
+        'Tipo de Arquivo': 'TXT',
+        'Delimitador': '|'
     },
 ];
+
 
 
 const Grid = () => {
@@ -41,9 +48,21 @@ const Grid = () => {
         },
         {
             key: 'Nome do Arquivo',
-            header: 'Arquivo Importado',
+            header: 'Nome do Arquivo',
             align: 'center',
             content: ({ row }) => <strong>{row['Nome do Arquivo']}</strong>,
+        },
+        {
+            key: 'Tipo de Arquivo',
+            header: 'Tipo de Arquivo',
+            align: 'center',
+            content: ({ row }) => <strong>{row['Tipo de Arquivo']}</strong>,
+        },
+        {
+            key: 'Delimitador',
+            header: 'Delimitador',
+            align: 'center',
+            content: ({ row }) => <strong>{row['Delimitador']}</strong>,
         },
     ];
 

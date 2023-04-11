@@ -8,6 +8,7 @@ import Login from '../pages/Login'
 import Admin from '../pages/Admin'
 import Relatorio from '../pages/Relatorio'
 import Upload from '../pages/Upload'
+import CadLayout from '../pages/CadLayout'
 
 const rootRoutes: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const rootRoutes: React.FC = () => {
       <Route path="/" component={Admin} isPrivate />
       <Route path="/Relatorio" component={Relatorio} isPrivate />
       <Route path="/Upload" component={Upload} isPrivate />
+      <Route path="/CadLayout" component={CadLayout} isPrivate />
     </Switch>
   )
 }

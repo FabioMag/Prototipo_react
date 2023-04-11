@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Badge } from '@mantine/core'
 
 import { Table } from 'react-fluid-table'
@@ -8,7 +8,7 @@ const data = [
         Fundo: "Mazzotini",
         "Rendimento Anual": "19,50%",
         "Rendimento Mensal": "1,63%",
-        Liquidez: "Alto",
+        Liquidez: "D + 120",
         Risco: "Baixo",
         "Potencial de Rentabilidade": "Alto",
     },
@@ -16,7 +16,7 @@ const data = [
         Fundo: "Poupança",
         "Rendimento Anual": "10,50%",
         "Rendimento Mensal": "0,88%",
-        Liquidez: "Alta",
+        Liquidez: "D + 0",
         Risco: "Baixo",
         "Potencial de Rentabilidade": "Baixo",
     },
@@ -24,7 +24,7 @@ const data = [
         Fundo: "Fundo Poupança",
         "Rendimento Anual": "11,40%",
         "Rendimento Mensal": "0,95%",
-        Liquidez: "Alta",
+        Liquidez: "D + 0",
         Risco: "Baixo",
         "Potencial de Rentabilidade": "Baixo",
     },
@@ -32,7 +32,7 @@ const data = [
         Fundo: "Fundo SELIC",
         "Rendimento Anual": "13,50%",
         "Rendimento Mensal": "1,13%",
-        Liquidez: "Alta",
+        Liquidez: "D + 360",
         Risco: "Baixo",
         "Potencial de Rentabilidade": "Baixo",
     },
@@ -40,7 +40,7 @@ const data = [
         Fundo: "CDB",
         "Rendimento Anual": "15,00%",
         "Rendimento Mensal": "1,25%",
-        Liquidez: "Média",
+        Liquidez: "D + 720",
         Risco: "Baixo",
         "Potencial de Rentabilidade": "Médio",
     },
@@ -48,7 +48,7 @@ const data = [
         Fundo: "LCI",
         "Rendimento Anual": "15,30%",
         "Rendimento Mensal": "1,28%",
-        Liquidez: "Baixa",
+        Liquidez: "D + 120",
         Risco: "Baixo",
         "Potencial de Rentabilidade": "Baixo",
     },
@@ -56,7 +56,7 @@ const data = [
         Fundo: "Fundo Renda Fixa",
         "Rendimento Anual": "15,90%",
         "Rendimento Mensal": "1,33%",
-        Liquidez: "Baixa",
+        Liquidez: "D + 5",
         Risco: "Baixo",
         "Potencial de Rentabilidade": "Baixo",
     },
@@ -64,50 +64,74 @@ const data = [
         Fundo: "FII",
         "Rendimento Anual": "18,00%",
         "Rendimento Mensal": "1,50%",
-        Liquidez: "Média",
+        Liquidez: "D + 1",
         Risco: "Médio",
         "Potencial de Rentabilidade": "Médio",
     },
 ];
 
 const Grid = () => {
+    const [highlightFirstRow, setHighlightFirstRow] = useState(true); // variável de estado para controlar a cor da primeira linha
+
     const columns = [
         {
             key: 'Fundo',
             header: 'Fundo',
             align: 'center',
-            content: ({ row }) => <strong>{row.Fundo}</strong>,
+            content: ({ row, index }) => (
+                <strong style={{ backgroundColor: highlightFirstRow && index === 0 ? 'yellow' : 'transparent' }}>
+                    {row.Fundo}
+                </strong>
+            ),
         },
         {
             key: 'Rendimento Anual',
             header: 'Rendimento Anual',
             align: 'center',
-            content: ({ row }) => <strong>{row['Rendimento Anual']}</strong>,
+            content: ({ row, index }) => (
+                <strong style={{ backgroundColor: highlightFirstRow && index === 0 ? 'yellow' : 'transparent' }}>
+                    {row['Rendimento Anual']}
+                </strong>
+            ),
         },
         {
             key: 'Rendimento Mensal',
             header: 'Rendimento Mensal',
             align: 'center',
-            content: ({ row }) => <strong>{row['Rendimento Mensal']}</strong>,
+            content: ({ row, index }) => (
+                <strong style={{ backgroundColor: highlightFirstRow && index === 0 ? 'yellow' : 'transparent' }}>
+                    {row['Rendimento Mensal']}
+                </strong>
+            ),
         },
         {
             key: 'Liquidez',
             header: 'Liquidez',
             align: 'center',
-            content: ({ row }) => <strong>{row.Liquidez}</strong>,
+            content: ({ row, index }) => (
+                <strong style={{ backgroundColor: highlightFirstRow && index === 0 ? 'yellow' : 'transparent' }}>
+                    {row.Liquidez}
+                </strong>
+            ),
         },
         {
             key: 'Risco',
             header: 'Risco',
             align: 'center',
-            content: ({ row }) => <strong>{row.Risco}</strong>,
+            content: ({ row, index }) => (
+                <strong style={{ backgroundColor: highlightFirstRow && index === 0 ? 'yellow' : 'transparent' }}>
+                    {row.Risco}
+                </strong>
+            ),
         },
         {
             key: 'Potencial de Rentabilidade',
             header: 'Potencial de Rentabilidade',
             align: 'center',
-            content: ({ row }) => (
-                <strong>{row['Potencial de Rentabilidade']}</strong>
+            content: ({ row, index }) => (
+                <strong style={{ backgroundColor: highlightFirstRow && index === 0 ? 'yellow' : 'transparent' }}>
+                    {row['Potencial de Rentabilidade']}
+                </strong>
             ),
         },
     ];
@@ -117,10 +141,7 @@ const Grid = () => {
             data={data}
             columns={columns}
         />
-
-
     );
 };
-
 
 export default Grid
